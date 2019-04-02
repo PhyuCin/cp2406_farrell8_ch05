@@ -5,6 +5,7 @@ public class CondoSales {
     private static int[] prices = {150000, 170000, 210000};
 
     public static void main(String[] args){
+        System.out.println("Summerdale Condo");
         Scanner input = new Scanner(System.in);
         System.out.println("Choose View\n1 - "+ views[0] + "\n2 - " + views[1] + "\n3 - " + views[2]);
         try {
