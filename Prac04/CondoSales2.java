@@ -6,7 +6,7 @@ public class CondoSales2 {
 
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
-        System.out.println("Summerdale Condo");
+        System.out.println("Summerdale Condominium");
         System.out.println("Choose View\n1 - "+ views[0] + "\n2 - " + views[1] + "\n3 - " + views[2]);
         try {
             int userChoice = input.nextInt();
