@@ -1,22 +1,21 @@
 import java.util.Scanner;
 
 public class CellPhoneService {
-    static final String MESSAGE = "Plan recommended: Plan ";
+    private static final String MESSAGE = "Plan recommended: Plan ";
+    private static Scanner input = new Scanner(System.in);
+    private static boolean validInput = false;
 
     public static void main(String[] args) {
         String plan;
         int cost;
-        Scanner input = new Scanner(System.in);
+
         System.out.println("Horizon Phones");
-        
-        System.out.println("Enter the number of maximum talk minutes per month:");
-        int talkMinutes = input.nextInt();
 
-        System.out.println("Enter the number of maximum text messages per month:");
-        int textMessages = input.nextInt();
+        int talkMinutes = getTalkMinutes();
 
-        System.out.println("Enter the number of maximum gigabytes of data per month:");
-        double data = input.nextDouble();
+        int textMessages = getTextMessages();
+
+        double data = getData();
 
         if (data == 0) {
             if (talkMinutes < 500) {
@@ -54,4 +53,58 @@ public class CellPhoneService {
             System.out.println(MESSAGE + plan + ", $" + cost);
         }
     }
+
+    private static int getTalkMinutes(){
+        System.out.println("Enter the number of maximum talk minutes per month:");
+        String userInput = "";
+        while (!validInput){
+            userInput = input.nextLine();
+            try{
+                Integer.parseInt(userInput);
+                validInput = true;
+            }
+            catch (Exception e){
+                System.out.println("Please enter a valid number of maximum talk minutes per month.");
+            }
+        }
+        validInput = false;
+        return Integer.parseInt(userInput);
+    }
+
+    private static int getTextMessages(){
+        System.out.println("Enter the number of maximum text messages per month:");
+        String userInput = "";
+        while (!validInput){
+            userInput = input.nextLine();
+            try{
+                Integer.parseInt(userInput);
+                validInput = true;
+            }
+            catch (Exception e){
+                System.out.println("Please enter a valid number of maximum text messages per month.");
+            }
+        }
+        validInput = false;
+        return Integer.parseInt(userInput);
+    }
+
+
+
+    private static double getData(){
+        System.out.println("Enter the number of maximum gigabytes of data per month:");
+        String userInput = "";
+        while (!validInput){
+            userInput = input.nextLine();
+            try{
+                Double.parseDouble(userInput);
+                validInput = true;
+            }
+            catch (Exception e){
+                System.out.println("Please enter a valid number of maximum gigabytes of data per month.");
+            }
+        }
+        validInput = false;
+        return Double.parseDouble(userInput);
+    }
+
 }
