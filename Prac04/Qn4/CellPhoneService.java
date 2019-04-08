@@ -1,3 +1,5 @@
+package Qn4;
+
 import java.util.Scanner;
 
 public class CellPhoneService {

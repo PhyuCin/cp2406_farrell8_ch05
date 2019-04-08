@@ -1,3 +1,5 @@
+package Qn3;
+
 import java.util.Scanner;
 
 public class CondoSales2 {

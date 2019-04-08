@@ -1,3 +1,5 @@
+package Qn1;
+
 import javax.swing.*;
 
 public class EvenOdd {
