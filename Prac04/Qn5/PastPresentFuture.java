@@ -8,9 +8,9 @@ public class PastPresentFuture {
         Calendar cal = Calendar.getInstance();
         final int THISMONTH = cal.get(Calendar.MONTH);
         final int THISYEAR = cal.get(Calendar.YEAR);
-        int day = 0;
-        int month = 0;
-        int year = 0;
+        int day;
+        int month;
+        int year;
 
         day = getDay();
         month = getMonth() + 1;
@@ -35,63 +35,18 @@ public class PastPresentFuture {
 
 
     public static int getDay() {
-        boolean valid = false;
-        String stringDay = "";
-        while (!valid) {
-            stringDay = JOptionPane.showInputDialog("Enter the date: ");
-            valid = checkInput(stringDay);
 
-            if (Integer.parseInt(stringDay) <= 0 && Integer.parseInt(stringDay) > 31){
-                JOptionPane.showMessageDialog(null, "Please enter a valid date.", "Error",
-                        JOptionPane.INFORMATION_MESSAGE);
-                valid = false;
-            }
-        }
+        String stringDay = JOptionPane.showInputDialog("Enter the date: ");
         return Integer.parseInt(stringDay);
     }
 
     public static int getMonth() {
-        boolean valid = false;
-        String stringMonth = "";
-        while (!valid) {
-            stringMonth = JOptionPane.showInputDialog("Enter the month: ");
-            valid = checkInput(stringMonth);
-
-            if (Integer.parseInt(stringMonth) <= 0 && Integer.parseInt(stringMonth) > 12){
-                JOptionPane.showMessageDialog(null, "Please enter a valid month.", "Error",
-                        JOptionPane.INFORMATION_MESSAGE);
-                valid = false;
-            }
-        }
+        String stringMonth = JOptionPane.showInputDialog("Enter the month: ");
         return Integer.parseInt(stringMonth);
     }
 
     public static int getYear() {
-        boolean valid = false;
-        String stringYear = "";
-        while (!valid) {
-            stringYear = JOptionPane.showInputDialog("Enter the year: ");
-            valid = checkInput(stringYear);
-
-            if (Integer.parseInt(stringYear) <= 0){
-                JOptionPane.showMessageDialog(null, "Please enter a valid year.", "Error",
-                        JOptionPane.INFORMATION_MESSAGE);
-                valid = false;
-            }
-        }
+        String stringYear = JOptionPane.showInputDialog("Enter the year: ");
         return Integer.parseInt(stringYear);
-    }
-
-    public static boolean checkInput(String stringInput) {
-        boolean valid;
-        try {
-            Integer.parseInt(stringInput);
-            valid = true;
-        } catch (Exception e) {
-            valid = false;
-            JOptionPane.showMessageDialog(null, "Please enter a valid number", "Error",
-                    JOptionPane.INFORMATION_MESSAGE);
-        }
-        return valid;
     }
 }
